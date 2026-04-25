@@ -23,7 +23,7 @@
       color: #1e293b;
     }
     .tutorial-card {
-      max-width: 750px;
+      max-width: 780px;
       width: 100%;
       background: #ffffff;
       border-radius: 2.5rem;
@@ -176,11 +176,6 @@
       border: 1px solid #e2e8f0;
       margin: 0.5rem 0 0.2rem;
     }
-    .separator {
-      margin: 0.2rem 0 0.8rem;
-      color: #64748b;
-      font-weight: 500;
-    }
     .caution {
       background: #fff7ed;
       border-left: 4px solid #f97316;
@@ -207,6 +202,14 @@
       gap: 0.5rem;
       flex-wrap: wrap;
     }
+    .edge-setting-path {
+      background: #f1f5f9;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+      font-family: monospace;
+      font-weight: 600;
+      color: #0f172a;
+    }
   </style>
 </head>
 <body>
@@ -216,14 +219,14 @@
       <span style="font-size:0.9rem; margin-left:auto; color:#475569;">Edge 浏览器</span>
     </h1>
 
-    <!-- 步骤1 -->
+    <!-- 步骤1：安装Tampermonkey -->
     <div class="step">
       <div class="step-header">
         <div class="step-number">1</div>
         <div class="step-title">获取 Tampermonkey 扩展</div>
       </div>
       <div class="step-desc">
-        <p>在 Edge 浏览器中，点击下方按钮直接跳转到 <strong>Edge 扩展商店</strong> 的 Tampermonkey 页面，然后点击“获取”安装。</p>
+        <p>点击下方按钮直接跳转到 <strong>Edge 扩展商店</strong> 的 Tampermonkey 页面，然后点击“获取”安装。</p>
         <div class="flex-row">
           <a class="btn btn-primary" href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd" target="_blank" rel="noopener noreferrer">
             <span class="emoji-icon">🐒</span> 一键跳转 Edge 商店安装
@@ -235,31 +238,58 @@
       </div>
     </div>
 
-    <!-- 步骤2 -->
+    <!-- 步骤2：开启开发者模式（使用 edge://extensions/ 链接） -->
     <div class="step">
       <div class="step-header">
         <div class="step-number">2</div>
+        <div class="step-title">打开扩展管理页面并开启“开发人员模式”</div>
+      </div>
+      <div class="step-desc">
+        <p>安装 Tampermonkey 后，需要确保扩展的开发者模式已启用，以便脚本正常运行。</p>
+        <div style="background:#f1f5f9; border-radius:1rem; padding:0.9rem 1.2rem;">
+          <p style="font-weight:600; margin-bottom:0.4rem;">📍 快速操作：</p>
+          <p class="edge-setting-path">
+            ① 点击下方按钮直接打开 <code style="background:#e2e8f0; padding:0.2rem 0.5rem; border-radius:0.5rem;">edge://extensions/</code> 页面
+          </p>
+          <a class="btn btn-outline" href="edge://extensions/" target="_blank" rel="noopener noreferrer" style="margin:0.5rem 0 0.5rem 0;">
+            <span class="emoji-icon">⚙️</span> 打开扩展管理页面
+          </a>
+          <p class="edge-setting-path" style="margin-top:0.3rem;">
+            ② 在页面左下角或顶部找到 <strong>“开发人员模式”</strong> 开关，将其 <strong>开启</strong>。
+          </p>
+        </div>
+        <p style="color:#475569; margin-top:0.2rem;">✅ 开启后，Tampermonkey 图标旁通常会显示“开发人员模式”提示，这是正常现象。</p>
+      </div>
+    </div>
+
+    <!-- 步骤3：获取脚本 -->
+    <div class="step">
+      <div class="step-header">
+        <div class="step-number">3</div>
         <div class="step-title">获取抖音免登陆脚本</div>
       </div>
       <div class="step-desc">
         <p>点击下方按钮，直接在新标签页中打开脚本安装地址。Tampermonkey 会自动识别并弹出安装页面。</p>
         <div class="url-box">
           <span style="font-weight:600;">脚本地址：</span>
-          <code class="link-highlight">https://test.test/test</code>
+          <code class="link-highlight">http://soujiaoben.org/#/s?id=99&host=soujiaoben</code>
         </div>
         <a class="btn btn-outline" href="http://soujiaoben.org/#/s?id=99&host=soujiaoben" target="_blank" rel="noopener noreferrer">
           <span class="emoji-icon">📜</span> 打开脚本安装页
         </a>
         <p style="font-size:0.9rem; color:#475569;">
-          在弹出的 Tampermonkey 安装页面中，点击 <strong>“安装”</strong> 按钮。如果没有自动弹出，请检查 Tampermonkey 是否已启用。
+          在弹出的 Tampermonkey 安装页面中，点击 <strong>“安装”</strong> 按钮。如果没有自动弹出，请检查 Tampermonkey 是否已启用并刷新页面。
         </p>
+        <div class="caution" style="margin-top:0.3rem;">
+          ⚠️ 若链接加载较慢或显示“正在加载中”，请稍候或检查网络。该脚本来源为第三方，请自行评估安全性。
+        </div>
       </div>
     </div>
 
-    <!-- 步骤3 -->
+    <!-- 步骤4：前往抖音 -->
     <div class="step">
       <div class="step-header">
-        <div class="step-number">3</div>
+        <div class="step-number">4</div>
         <div class="step-title">前往抖音，开始免登陆浏览</div>
       </div>
       <div class="step-desc">
@@ -280,10 +310,11 @@
       </div>
     </div>
 
-    <!-- 额外提示 -->
+    <!-- 常见问题 -->
     <div style="background:#f1f4f9; border-radius:1.5rem; padding:1.2rem 1.5rem; margin-top:1.5rem; color:#1e293b;">
       <p style="font-weight:700; margin-bottom:0.5rem;">🔧 常见问题</p>
-      <p style="font-size:0.9rem; margin-bottom:0.3rem;">• 如果脚本未生效，请刷新抖音页面或检查 Tampermonkey 是否已更新到最新版本。</p>
+      <p style="font-size:0.9rem; margin-bottom:0.3rem;">• 如果脚本未生效，请刷新抖音页面，并确保 Tampermonkey 已启用且开发者模式已开启。</p>
+      <p style="font-size:0.9rem;">• 示例脚本页面如无法访问，可尝试更换网络环境或联系脚本作者。</p>
     </div>
     
     <div class="footer-note">
